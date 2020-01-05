@@ -2,6 +2,16 @@ const express = require('express')
 const Task = require('../models/task')
 const router = new express.Router()
 
+/**
+ * @swagger
+ * /tasks:
+ *    tags:
+ *    get:
+ *      description: Use to return all tasks
+ *    responses:
+ *      '200':
+ *        description: Successfully requested all tasks
+ */
 router.get('/tasks', async (req, res) =>{
     try {
         const tasks = await Task.find({})

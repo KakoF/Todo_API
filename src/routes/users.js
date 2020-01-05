@@ -3,6 +3,15 @@ const User = require('../models/user')
 
 const router = new express.Router()
 
+/**
+ * @swagger
+ * /users:
+ *    get:
+ *      description: Use to return all users
+ *    responses:
+ *      '200':
+ *        description: Successfully requested all users
+ */
 router.get('/users', async (req, res) =>{
     try {
         const users = await User.find({})
